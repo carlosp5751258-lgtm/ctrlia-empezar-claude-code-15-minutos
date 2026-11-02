@@ -1,22 +1,24 @@
 # How to start with Claude Code in a project: a 15-minute checklist (Ctrl+IA)
 
-Your first 15 minutes with Claude Code in a new or freshly cloned project: review the folder before trusting it, mode, model and effort, `/init` and a short CLAUDE.md, the permissions you'll need, `/context` and a first task with evidence. Script messages are in Spanish.
+The Spanish version is at the repository root and in [README.md](README.md); the English files are in `en/`.
+
+Your first 15 minutes with Claude Code in a new or freshly cloned project: review the folder before trusting it, mode, model and effort, `/init` and a short CLAUDE.md, the permissions you'll need, `/context` and a first task with evidence.
 
 Full page: https://ctrlia.dev/en/recetas/empezar-claude-code-15-minutos.html (Español: https://ctrlia.dev/recetas/empezar-claude-code-15-minutos.html)
 
 ## What's inside
 | File | What for |
 | --- | --- |
-| `checklist.en.md` / `checklist.md` | The minute-by-minute list, to print or tick |
-| `minuto-0.sh` | Before opening Claude: shows the configuration the folder brings and the git status and, if you give it a name, creates the working branch |
-| `settings.ejemplo.json` | Minimal `.claude/settings.json` to get started (Node; replace the commands with yours) |
-| `primer-encargo.en.md` / `primer-encargo.md` | First task template: task, goal, what done means, constraints and evidence |
+| `en/checklist.md` | The minute-by-minute list, to print or tick |
+| `en/minuto-0.sh` | Before opening Claude: shows the configuration the folder brings and the git status and, if you give it a name, creates the working branch |
+| `en/settings.ejemplo.json` | Minimal `.claude/settings.json` to get started (Node; replace the commands with yours) |
+| `en/primer-encargo.md` | First task template: task, goal, what done means, constraints and evidence |
 
 ## How to use it
 ```bash
 cd ~/projects/my-repo
-/path/to/minuto-0.sh claude/first-task   # without an argument it doesn't create a branch
-claude                                   # and read the trust dialog before accepting it
+/path/to/ctrlia-empezar-claude-code-15-minutos/en/minuto-0.sh claude/first-task   # without an argument it doesn't create a branch
+claude                                                                       # and read the trust dialog before accepting it
 ```
 
 ## Tested

@@ -9,7 +9,7 @@ When you open `claude` in a new folder the trust dialog appears, and what you ac
   - How to check it: `ls -la .claude/ .mcp.json CLAUDE.md AGENTS.md` and read `.claude/settings.json` (hooks, env, allow), the skills in `.claude/skills/` and the servers in `.mcp.json`. The [permissions checklist](https://ctrlia.dev/en/recetas/checklist-permisos-claude-code.html) explains what to look for.
 - [ ] **Commit or open a new branch.**
   - Why: `/rewind` undoes the edits Claude makes with its file tools, but not changes made only with Bash commands or by subagents: git is your safety net.
-  - How to check it: a clean `git status` and `git switch -c claude/primera-tarea`.
+  - How to check it: a clean `git status` and `git switch -c claude/first-task`.
 - [ ] **Open `claude` at the project root, not in your home folder.**
   - Why: if you start in your home folder, trust lasts only for that session and isn't saved.
   - How to check it: `git rev-parse --show-toplevel` should match the folder where you launch `claude`.
@@ -17,12 +17,12 @@ When you open `claude` in a new folder the trust dialog appears, and what you ac
   - Why: it lists the rules and folders the repo would grant you.
   - How to check it: accept only if they make sense to you. If you've never seen it in that folder, `claude doctor` warns you about allow rules that are on hold.
 
-The repository's `minuto-0.sh` script does this minute for you (it shows the configuration and the git status and, if you give it a name, creates the branch):
+The repository's `en/minuto-0.sh` script does this minute for you (it shows the configuration and the git status and, if you give it a name, creates the branch):
 
 ```bash
-cd ~/proyectos/mi-repo
+cd ~/projects/my-repo
 ls -la .claude/ .mcp.json CLAUDE.md AGENTS.md 2>/dev/null   # what configuration does it bring?
-git status && git switch -c claude/primera-tarea           # safety net
+git status && git switch -c claude/first-task              # safety net
 claude doctor                                               # valid settings? rules on hold?
 claude                                                      # open at the root and read the trust dialog
 ```
@@ -80,7 +80,7 @@ In Manual, approving `npm test` ten times leads you to approve without reading; 
 }
 ```
 
-It's the minimum to get started in Node (`settings.ejemplo.json` in the repository); replace the commands with yours.
+It's the minimum to get started in Node (`en/settings.ejemplo.json` in the repository); replace the commands with yours.
 
 - [ ] **Put your personal locks in `~/.claude/settings.json`.**
   - Why: they apply in every project: `deny` for `~/.ssh` and `~/.aws`, and `"disableBypassPermissionsMode": "disable"` if you don't want to slip into bypass by accident.
@@ -107,7 +107,7 @@ Claude stops when the work **looks** finished. If it has nothing to run that say
   - How to check it: you can say in one sentence what "done" means.
 - [ ] **Write a specific prompt.**
   - Why: which file, which symptom, what "fixed" means and how to check it. The official example replaces "fix the login bug" with: "users report that login fails after session timeout; check the token refresh in src/auth/, write a test that reproduces it, then fix it".
-  - How to check it: use the first task template below (`primer-encargo.md` in the repository, English version in `primer-encargo.en.md`).
+  - How to check it: use the first task template below (`en/primer-encargo.md` in the repository; the Spanish one is `primer-encargo.md` at the root).
 - [ ] **Ask for the evidence.**
   - Why: "All tests pass" without output tells you almost nothing.
   - How to check it: the answer includes the command it ran and its output.
